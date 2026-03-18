@@ -8,9 +8,6 @@ on:
         required: true
         type: string
 
-        env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-
       display_name:
         description: "App Name (Optional)"
         default: "YouTube Music"
@@ -26,6 +23,9 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
 jobs:
   build:
