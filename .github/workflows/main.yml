@@ -8,6 +8,9 @@ on:
         required: true
         type: string
 
+        env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
       display_name:
         description: "App Name (Optional)"
         default: "YouTube Music"
@@ -60,7 +63,7 @@ jobs:
       - name: Set PATH environment variables
         run: |
           echo "$(brew --prefix make)/libexec/gnubin" >> $GITHUB_PATH
-          echo "THEOS=${{ github.workspace }}/theos" >> $GITHUB_ENV
+          echo "THEOS=${{ github.workspace }}/theos" >> $GITHUB_ENV 
 
       - name: Cache Theos
         id: theos
